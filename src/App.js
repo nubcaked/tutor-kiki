@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Topbar from './components/layout/Topbar.js';
 import Navbar from './components/layout/Navbar.js';
 import Home from './components/route/Home';
 import Register from './components/route/Register';
@@ -12,6 +13,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <Topbar />
         <Navbar />
 
         <Switch>
