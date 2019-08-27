@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
+import './Navbar.scss';
 
 class Navbar extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar">
         <nav className="nav-wrapper">
           <div className="container">
             <a href="#" className="brand-logo">Tutor.Kiki</a>

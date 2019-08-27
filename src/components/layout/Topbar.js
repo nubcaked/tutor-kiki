@@ -6,8 +6,8 @@ import './Topbar.scss';
 class Topbar extends Component {
   render() {
     return (
-      <div>
-        <nav className="top-bar">
+      <div className="topbar">
+        <nav>
           <div className="container">
             <ul id="nav-mobile" className="left">
               <li><NavLink to="/">FAQ</NavLink></li>

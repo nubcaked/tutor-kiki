@@ -1,4 +1,14 @@
-a {
-  height: 32px;
-  line-height: 32px;
+.topbar {
+  a {
+    height: 32px;
+    line-height: 32px;
+  }
+  nav {
+    height: 32px;
+    line-height: 32px;
+    background-color: grey;
+  }
+  a {
+    color: black;
+  }
 }
