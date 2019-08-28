@@ -6,7 +6,7 @@ import './Topbar.scss';
 class Topbar extends Component {
   render() {
     return (
-      <div className="topbar">
+      <div className="tk-topbar">
         <nav>
           <div className="container">
             <ul id="nav-mobile" className="left">

@@ -9,12 +9,11 @@ class Navbar extends Component {
       const sidenav = M.Sidenav.init(document.querySelectorAll('.sidenav'));
       const collapsible = M.Collapsible.init(document.querySelectorAll('.collapsible'));
     });
-    
   }
 
   render() {
     return (
-      <div className="navbar">
+      <div className="tk-navbar">
         <nav className="nav-wrapper">
           <div className="container">
             <a href="#" className="brand-logo">Tutor.Kiki</a>
