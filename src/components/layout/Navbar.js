@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import M from 'materialize-css';
 import './Navbar.scss';
 
 class Navbar extends Component {
   componentDidMount() {
-    document.addEventListener('DOMContentLoaded', function() {
-      const sidenav = M.Sidenav.init(document.querySelectorAll('.sidenav'));
-      const collapsible = M.Collapsible.init(document.querySelectorAll('.collapsible'));
-    });
+    
   }
 
   render() {

@@ -9,9 +9,6 @@ import Home from './components/route/Home';
 import Register from './components/route/Register';
 import Login from './components/route/Login';
 
-import 'materialize-css/dist/css/materialize.min.css';
-import M from 'materialize-css';
-
 class App extends Component {
   render() {
     return (

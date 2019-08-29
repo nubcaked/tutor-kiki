@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import M from 'materialize-css';
 
 class Slider extends Component {
   componentDidMount() {
-    document.addEventListener('DOMContentLoaded', function() {
-      const slider = M.Slider.init(document.querySelectorAll('.slider'));
-    });
   }
 
   render() {

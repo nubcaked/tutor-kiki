@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Topbar.scss';
 
-//TODO: CREATE SCOPED STYLING OR USE STYLED-COMPONENTS
 class Topbar extends Component {
   render() {
     return (
@@ -10,7 +9,12 @@ class Topbar extends Component {
         <nav>
           <div className="container">
             <ul id="nav-mobile" className="left">
-              <li><NavLink to="/">FAQ</NavLink></li>
+              <li>
+                <div>
+                  <i class="small material-icons">phone</i>
+                  <NavLink to="/">FAQ</NavLink>
+                </div>
+              </li>
             </ul>
             <ul id="nav-mobile" className="right">
               <li><NavLink to="/">FAQ</NavLink></li>
