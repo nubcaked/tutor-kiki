@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Topbar />
-        <Navbar />
-        <Slider />
+        {/* <Navbar />
+        <Slider /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />
