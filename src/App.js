@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Topbar from './components/layout/Topbar.js';
 import Navbar from './components/layout/Navbar.js';
+import TutorKikiLogo from './images/tutor-kiki-logo-3.jpg';
 import Slider from './components/layout/Slider.js';
 
 import Home from './components/route/Home';
@@ -13,9 +14,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Topbar />
-        {/* <Navbar />
-        <Slider /> */}
+        {/* <Topbar /> */}
+        <Navbar logo={TutorKikiLogo} />
+        {/* <Slider /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />

@@ -11,7 +11,7 @@ class Topbar extends Component {
             <ul id="nav-mobile" className="left">
               <li>
                 <div>
-                  <i class="small material-icons">phone</i>
+                  <i className="small material-icons">phone</i>
                   <NavLink to="/">FAQ</NavLink>
                 </div>
               </li>

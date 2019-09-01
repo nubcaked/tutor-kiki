@@ -1,39 +1,47 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.scss';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
+import Container from '@material-ui/core/Container';
 
-class Navbar extends Component {
-  componentDidMount() {
-    
-  }
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: 'none',
+  },
+}));
 
-  render() {
-    return (
-      <div className="tk-navbar">
-        <nav className="nav-wrapper">
-          <div className="container">
-            <a href="#" className="brand-logo">Tutor.Kiki</a>
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li><NavLink to="/">Class Schedule</NavLink></li>
-              <li><NavLink to="/">Fees & Promotions</NavLink></li>
-              <li><NavLink to="/">Parent Portal</NavLink></li>
-              <li><NavLink to="/">Tutor Portal</NavLink></li>
-              <li><NavLink to="/">Contact Us</NavLink></li>
-            </ul>
-          </div>
-        </nav>
+export default function TextButtons(props) {
+  const classes = useStyles();
 
-        <ul className="sidenav" id="mobile-demo">
-          <li><NavLink to="/">Class Schedule</NavLink></li>
-          <li><NavLink to="/">Fees & Promotions</NavLink></li>
-          <li><NavLink to="/">Parent Portal</NavLink></li>
-          <li><NavLink to="/">Tutor Portal</NavLink></li>
-          <li><NavLink to="/">Contact Us</NavLink></li>
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <Hidden smDown>
+      <Container>
+        <Grid container justify="space-between" alignItems="center" style={{backgroundColor: props.backgroundColor}}>
+          <img src={props.logo} width="250px" />
+          <Grid item>
+            <Button component={Link} to="/test" className={classes.button}>
+              Class Schedule
+            </Button>
+            <Button className={classes.button}>
+              Fees & Promotions
+            </Button>
+            <Button className={classes.button}>
+              Parent Portal
+            </Button>
+            <Button className={classes.button}>
+              Tutor Portal
+            </Button>
+            <Button className={classes.button}>
+              Contact Us
+            </Button>
+          </Grid>
+        </Grid>
+      </Container>
+    </Hidden>
+  );
 }
-
-export default Navbar;
