@@ -1,29 +1,44 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Topbar.scss';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
+import Container from '@material-ui/core/Container';
 
-class Topbar extends Component {
-  render() {
-    return (
-      <div className="tk-topbar">
-        <nav>
-          <div className="container">
-            <ul id="nav-mobile" className="left">
-              <li>
-                <div>
-                  <i className="small material-icons">phone</i>
-                  <NavLink to="/">FAQ</NavLink>
-                </div>
-              </li>
-            </ul>
-            <ul id="nav-mobile" className="right">
-              <li><NavLink to="/">FAQ</NavLink></li>
-            </ul>
-          </div>
-        </nav>
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(0),
+  },
+  container: {
+    backgroundColor: "pink",
+  },
+  input: {
+    display: 'none',
+  },
+}));
+
+export default function TextButtons(props) {
+  const classes = useStyles(props);
+
+  return (
+    <Hidden smDown>
+      <div className={classes.container}>
+        <Container className={classes.container}>
+          <Grid container justify="space-between" alignItems="center">
+            <Grid item>
+              <Button component={Link} to="/test" className={classes.button}>
+                Class Schedule
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button component={Link} to="/test" className={classes.button}>
+                Class Schedule
+              </Button>
+            </Grid>
+          </Grid>
+        </Container>
       </div>
-    );
-  }
+    </Hidden>
+  );
 }
-
-export default Topbar;

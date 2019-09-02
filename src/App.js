@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {/* <Topbar /> */}
+        <Topbar />
         <Navbar logo={TutorKikiLogo} />
         {/* <Slider /> */}
 
