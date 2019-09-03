@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   input: {
     display: 'none',
   },
-  phoneIcon: {
+  icon: {
     verticalAlign: 'middle',
   },
   box: {
@@ -38,11 +38,11 @@ export default function TextButtons(props) {
           <Grid container justify="space-between" alignItems="center">
             <Grid item>
               <Box className={classes.box} marginX="10px">
-                <PhoneIcon fontSize="small" className={classes.phoneIcon} />
+                <PhoneIcon fontSize="small" className={classes.icon} />
                 <Typography variant="body2" display="inline">(+65)9169 9955</Typography>
               </Box>
               <Box className={classes.box}>
-                <MailIcon fontSize="small" className={classes.phoneIcon} />
+                <MailIcon fontSize="small" className={classes.icon} />
                 <Typography variant="body2" display="inline">nubzcakez@gmail.com</Typography>
               </Box>
             </Grid>
