@@ -22,7 +22,9 @@ export default function TextButtons(props) {
     <Hidden smDown>
       <Container>
         <Grid container justify="space-between" alignItems="center" style={{backgroundColor: props.backgroundColor}}>
-          <img src={props.logo} width="250px" />
+          <Link to="/">
+            <img src={props.logo} width="250px" />
+          </Link>
           <Grid item>
             <Button component={Link} to="/test" className={classes.button}>
               Class Schedule

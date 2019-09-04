@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Topbar from './components/layout/Topbar.js';
 import Navbar from './components/layout/Navbar.js';
 import TutorKikiLogo from './images/tutor-kiki-logo-3.jpg';
-import Slider from './components/layout/Slider.js';
 
 import Home from './components/route/Home';
 import Register from './components/route/Register';
@@ -16,12 +15,11 @@ class App extends Component {
       <BrowserRouter>
         <Topbar />
         <Navbar logo={TutorKikiLogo} />
-        {/* <Slider /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="register" component={Register} />
-          <Route path="login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     );
