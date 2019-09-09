@@ -19,7 +19,7 @@ export default function TextButtons(props) {
   const classes = useStyles();
 
   return (
-    <Hidden smDown>
+    <Hidden>
       <Container>
         <Grid container justify="space-between" alignItems="center" style={{backgroundColor: props.backgroundColor}}>
           <Link to="/">

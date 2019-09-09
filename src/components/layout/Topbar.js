@@ -32,7 +32,7 @@ export default function TextButtons(props) {
   const classes = useStyles(props);
 
   return (
-    <Hidden smDown>
+    <Hidden>
       <div className={classes.container}>
         <Container className={classes.container}>
           <Grid container justify="space-between" alignItems="center">
@@ -49,6 +49,12 @@ export default function TextButtons(props) {
             <Grid item>
               <Button component={Link} to="/test" className={classes.button}>
                 FAQ
+              </Button>
+              <Button component={Link} to="/login" className={classes.button}>
+                Sign in
+              </Button>
+              <Button component={Link} to="/test" className={classes.button}>
+                Sign up
               </Button>
             </Grid>
           </Grid>
