@@ -50,10 +50,10 @@ export default function TextButtons(props) {
               <Button component={Link} to="/test" className={classes.button}>
                 FAQ
               </Button>
-              <Button component={Link} to="/login" className={classes.button}>
+              <Button component={Link} to="/signin" className={classes.button}>
                 Sign in
               </Button>
-              <Button component={Link} to="/test" className={classes.button}>
+              <Button component={Link} to="/signup" className={classes.button}>
                 Sign up
               </Button>
             </Grid>

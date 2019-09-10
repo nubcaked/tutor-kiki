@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-const useStyles = (theme => ({
+const useStyles = theme => ({
   // '@global': {
   //   body: {
   //     backgroundColor: theme.palette.common.white,
@@ -36,9 +36,9 @@ const useStyles = (theme => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-}));
+});
 
-class Login extends Component {
+class SignIn extends Component {
   render() {
     const { classes } = this.props;
 
@@ -109,4 +109,4 @@ class Login extends Component {
   }
 }
 
-export default withStyles(useStyles)(Login);
+export default withStyles(useStyles)(SignIn);
