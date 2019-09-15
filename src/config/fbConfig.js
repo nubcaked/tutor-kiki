@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyB9_IJBg5qTZOpSBzOWKg0TwQ4WcGR-3gA",
   authDomain: "kikitutor-dc3c1.firebaseapp.com",
   databaseURL: "https://kikitutor-dc3c1.firebaseio.com",
@@ -13,6 +13,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(config);
-firebase.firestore().settings({ timestampsInSnapshots: true });
+firebase.firestore();
 
 export default firebase;
