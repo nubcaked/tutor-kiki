@@ -11,6 +11,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { signIn } from '../../store/actions/authActions';
 
 const useStyles = theme => ({
   // '@global': {
@@ -38,6 +41,20 @@ const useStyles = theme => ({
 });
 
 class SignIn extends Component {
+  state = {
+    email: '',
+    password: ''
+  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.signIn(this.state);
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -62,6 +79,7 @@ class SignIn extends Component {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={this.handleChange}
             />
             <TextField
               variant="outlined"
@@ -73,6 +91,7 @@ class SignIn extends Component {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={this.handleChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -84,6 +103,7 @@ class SignIn extends Component {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={this.handleSubmit}
             >
               Sign In
             </Button>
@@ -106,4 +126,19 @@ class SignIn extends Component {
   }
 }
 
-export default withStyles(useStyles)(SignIn);
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default compose(
+  withStyles(useStyles),
+  connect(mapStateToProps, mapDispatchToProps)
+)(SignIn);

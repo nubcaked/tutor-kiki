@@ -9,6 +9,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import MailIcon from '@material-ui/icons/Mail';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TextButtons(props) {
+function Topbar(props) {
   const classes = useStyles(props);
 
   return (
@@ -63,3 +64,12 @@ export default function TextButtons(props) {
     </Hidden>
   );
 }
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps)(Topbar)
