@@ -8,6 +8,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import ErrorOutlinedIcon from '@material-ui/icons/ErrorOutlined';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -30,6 +31,10 @@ const useStyles = theme => ({
   avatar: {
     margin: theme.spacing(1),
     // backgroundColor: "grey",
+  },
+  avatarError: {
+    margin: theme.spacing(1),
+    backgroundColor: "red",
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -56,17 +61,17 @@ class SignIn extends Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, authError } = this.props;
 
     return (
       <Container component="main" maxWidth="xs">
         {/* <CssBaseline /> */}
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+          <Avatar className={ authError ? classes.avatarError : classes.avatar }>
+            { authError ? <ErrorOutlinedIcon /> : <LockOutlinedIcon /> }
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            { authError ? authError : 'Sign in'}
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
