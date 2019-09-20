@@ -16,6 +16,12 @@ const authReducer = (state = initState, action) => {
         ...state,
         authError: null
       }
+    case 'RESET_STATE':
+      console.log('auth state resetted');
+      return {
+        ...state,
+        authError: null
+      }
     default:
       return state;
   }

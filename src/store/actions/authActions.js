@@ -12,3 +12,9 @@ export const signIn = (credentials) => {
     });
   }
 }
+
+export const resetState = () => {
+  return (dispatch, getState) => {
+    dispatch({ type: 'RESET_STATE' });
+  }
+}

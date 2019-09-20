@@ -9,12 +9,13 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import ErrorOutlinedIcon from '@material-ui/icons/ErrorOutlined';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { signIn } from '../../store/actions/authActions';
+import { signIn, resetState } from '../../store/actions/authActions';
 
 const useStyles = theme => ({
   // '@global': {
@@ -50,6 +51,10 @@ class SignIn extends Component {
     email: '',
     password: ''
   }
+  componentWillUnmount() {
+    console.log("HI");
+    this.props.resetState();
+  }
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
@@ -67,9 +72,9 @@ class SignIn extends Component {
       <Container component="main" maxWidth="xs">
         {/* <CssBaseline /> */}
         <div className={classes.paper}>
-          <Avatar className={ authError ? classes.avatarError : classes.avatar }>
-            { authError ? <ErrorOutlinedIcon /> : <LockOutlinedIcon /> }
-          </Avatar>
+          {/* <Avatar className={ authError ? '' : classes.avatar }> */}
+            { authError ? <ErrorOutlineIcon fontSize="large" /> : <LockOutlinedIcon fontSize="large" /> }
+          {/* </Avatar> */}
           <Typography component="h1" variant="h5">
             { authError ? authError : 'Sign in'}
           </Typography>
@@ -139,7 +144,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    signIn: (creds) => dispatch(signIn(creds))
+    signIn: (creds) => dispatch(signIn(creds)),
+    resetState: () => dispatch(resetState())
   }
 }
 
