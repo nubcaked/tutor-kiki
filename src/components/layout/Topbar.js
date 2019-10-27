@@ -10,6 +10,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { connect } from 'react-redux';
+import { signOut } from '../../store/actions/authActions';
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -57,6 +58,9 @@ function Topbar(props) {
               <Button component={Link} to="/signup" className={classes.button}>
                 Sign up
               </Button>
+              <Button onClick={props.signOut} className={classes.button}>
+                Sign out
+              </Button>
             </Grid>
           </Grid>
         </Container>
@@ -68,8 +72,14 @@ function Topbar(props) {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-
+    
   }
 }
 
-export default connect(mapStateToProps)(Topbar)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Topbar);
