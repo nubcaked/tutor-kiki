@@ -32,6 +32,8 @@ const useStyles = makeStyles(theme => ({
 
 function Topbar(props) {
   const classes = useStyles(props);
+  const { auth } = props;
+  console.log(auth);
 
   return (
     <Hidden>
@@ -52,15 +54,21 @@ function Topbar(props) {
               <Button component={Link} to="/test" className={classes.button}>
                 FAQ
               </Button>
-              <Button component={Link} to="/signin" className={classes.button}>
-                Sign in
-              </Button>
-              <Button component={Link} to="/signup" className={classes.button}>
-                Sign up
-              </Button>
-              <Button onClick={props.signOut} className={classes.button}>
-                Sign out
-              </Button>
+              {auth.uid &&
+                <Button onClick={props.signOut} className={classes.button}>
+                  Sign out
+                </Button>
+              }
+              {!auth.uid &&
+                <Button component={Link} to="/signin" className={classes.button}>
+                  Sign in
+                </Button>
+              }
+              {!auth.uid &&
+                <Button component={Link} to="/signup" className={classes.button}>
+                  Sign up
+                </Button>
+              }
             </Grid>
           </Grid>
         </Container>
@@ -70,9 +78,8 @@ function Topbar(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    
+    auth: state.firebase.auth
   }
 }
 
