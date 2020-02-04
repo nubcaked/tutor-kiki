@@ -8,6 +8,7 @@ import TutorKikiLogo from './images/tutor-kiki-logo-3.jpg';
 import Home from './components/route/Home';
 import SignUp from './components/route/SignUp';
 import SignIn from './components/route/SignIn';
+import PrivateRoute from './helpers/PrivateRoute.js';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignUp} />
           <Route path="/signin" component={SignIn} />
+          <PrivateRoute path="/test" component={SignUp} />
         </Switch>
       </BrowserRouter>
     );

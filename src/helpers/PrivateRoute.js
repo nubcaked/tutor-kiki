@@ -17,4 +17,10 @@ const PrivateRoute = ({ component: Component, auth, ...rest}) => {
   )
 }
 
-export default PrivateRoute;
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps)(PrivateRoute);
